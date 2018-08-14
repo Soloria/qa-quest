@@ -19,7 +19,7 @@ namespace QuestTest
         [FindsBy(How = How.CssSelector, Using = ".graphs-details>a")]
         private IWebElement DetailsBlockLink { get; [UsedImplicitly] set; }
         
-        [FindsBy(How = How.CssSelector, Using = ".graphs-error>a")]
+        [FindsBy(How = How.CssSelector, Using = ".graphs-errors>a")]
         private IWebElement ErrorsBlockLink { get; [UsedImplicitly] set; }
         
         [FindsBy(How = How.CssSelector, Using = ".graphs-support>a")]
