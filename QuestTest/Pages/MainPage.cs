@@ -46,7 +46,7 @@ namespace QuestTest
             return new DetailsBlock(SessionManager.getDriver());
         }
 
-        public ErrorsBlock ClickErrosBlockLink()
+        public ErrorsBlock ClickErrorsBlockLink()
         {
             ErrorsBlockLink.Click();
             return new ErrorsBlock(SessionManager.getDriver());
@@ -69,10 +69,16 @@ namespace QuestTest
             public DetailsBlock(IWebDriver driver) : base(driver) { }
 
             [FindsBy(How = How.Id, Using = "attention")]
-            private IWebElement AttentionCheckbox { get; [UsedImplicitly] set; }
+            public IWebElement HiddenAttentionCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "logic")]
+            public IWebElement HiddenLogicCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='logic']")]
             private IWebElement LogicCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='attention']")]
+            private IWebElement AttentionCheckbox { get; [UsedImplicitly] set; }
 
             public DetailsBlock ClickAttentionCheckbox()
             {
@@ -93,19 +99,33 @@ namespace QuestTest
             public ErrorsBlock(IWebDriver driver) : base(driver) { }
 
             [FindsBy(How = How.Id, Using = "eye")]
+            public IWebElement HiddenEyeCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='eye']")]
             private IWebElement EyeCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "beautiful")]
+            public IWebElement HiddenBeautifulCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='beautiful']")]
             private IWebElement BeautifulCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "tasks")]
+            public IWebElement HiddenTasksCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='tasks']")]
             private IWebElement TasksCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "soft")]
+            public IWebElement HiddenSoftCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='soft']")]
             private IWebElement SoftCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.CssSelector, Using = "a[target=_blank")]
             private IWebElement SoftLink { get; [UsedImplicitly] set; }
+
+            
 
             public ErrorsBlock ClickEyeCheckbox()
             {
@@ -143,15 +163,27 @@ namespace QuestTest
             public SupportBlock(IWebDriver driver) : base(driver) { }
 
             [FindsBy(How = How.Id, Using = "attention2")]
+            public IWebElement HiddenAttentionCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='attention2']")]
             private IWebElement AttentionCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "responsibility")]
+            public IWebElement HiddenResponsibilityCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='responsibility'")]
             private IWebElement ResponsibilityCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "parallel")]
+            public IWebElement HiddenParallelCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='parallel']")]
             private IWebElement ParallelCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "logic2")]
+            public IWebElement HiddenLogicCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='logic2']")]
             private IWebElement LogicCheckbox { get; [UsedImplicitly] set; }
 
             public SupportBlock ClickAttentionCheckbox()
@@ -184,10 +216,18 @@ namespace QuestTest
             public FilesBlock(IWebDriver driver) : base(driver) { }
 
             [FindsBy(How = How.Id, Using = "chaos")]
+            public IWebElement HiddenChaosCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='chaos']")]
             private IWebElement ChaosCheckbox { get; [UsedImplicitly] set; }
 
             [FindsBy(How = How.Id, Using = "beautiful2")]
+            public IWebElement HiddenBeautifulCheckbox { get; [UsedImplicitly] set; }
+
+            [FindsBy(How = How.CssSelector, Using = "label[for='beautiful2']")]
             private IWebElement BeautifulCheckbox { get; [UsedImplicitly] set; }
+
+
 
             public FilesBlock ClickChaosCheckbox()
             {
