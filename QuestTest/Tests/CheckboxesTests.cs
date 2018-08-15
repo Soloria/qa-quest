@@ -8,6 +8,8 @@ namespace QuestTest
         [OneTimeSetUp]
         public static void Start() => SessionManager.Open(SessionManager.Path);
 
+        private const string Message = "Checkbox is not reusable.";
+
         [Test]
         [Order(order: 0)]
         public void TestAttentionCheckboxInDetailsBlock()
@@ -16,7 +18,7 @@ namespace QuestTest
                 .ClickAttentionCheckbox()
                 .ClickAttentionCheckbox();
                 
-            Assert.IsTrue(new MainPage.DetailsBlock(SessionManager.getDriver()).HiddenAttentionCheckbox.Selected);
+            Assert.IsTrue(new MainPage.DetailsBlock(SessionManager.getDriver()).HiddenAttentionCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -27,7 +29,7 @@ namespace QuestTest
                 .ClickLogicCheckbox()
                 .ClickLogicCheckbox();
 
-            Assert.IsTrue(new MainPage.DetailsBlock(SessionManager.getDriver()).HiddenLogicCheckbox.Selected);
+            Assert.IsTrue(new MainPage.DetailsBlock(SessionManager.getDriver()).HiddenLogicCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -39,7 +41,7 @@ namespace QuestTest
                 .ClickEyeCheckbox()
                 .ClickEyeCheckbox();
 
-            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenEyeCheckbox.Selected);
+            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenEyeCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -50,7 +52,7 @@ namespace QuestTest
                 .ClickBeautifulCheckbox()
                 .ClickBeautifulCheckbox();
 
-            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenBeautifulCheckbox.Selected);
+            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenBeautifulCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -61,7 +63,7 @@ namespace QuestTest
                 .ClickTasksCheckbox()
                 .ClickTasksCheckbox();
 
-            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenTasksCheckbox.Selected);
+            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenTasksCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -72,7 +74,7 @@ namespace QuestTest
                 .ClickSoftCheckbox()
                 .ClickSoftCheckbox();
 
-            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenSoftCheckbox.Selected);
+            Assert.IsTrue(new MainPage.ErrorsBlock(SessionManager.getDriver()).HiddenSoftCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -84,7 +86,7 @@ namespace QuestTest
                 .ClickAttentionCheckbox()
                 .ClickAttentionCheckbox();
 
-            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenAttentionCheckbox.Selected);
+            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenAttentionCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -95,7 +97,7 @@ namespace QuestTest
                 .ClickResponsibilityCheckbox()
                 .ClickResponsibilityCheckbox();
 
-            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenResponsibilityCheckbox.Selected);
+            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenResponsibilityCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -106,7 +108,7 @@ namespace QuestTest
                 .ClickParallelCheckbox()
                 .ClickParallelCheckbox();
 
-            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenParallelCheckbox.Selected);
+            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenParallelCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -117,7 +119,7 @@ namespace QuestTest
                 .ClickLogicCheckbox()
                 .ClickLogicCheckbox();
 
-            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenLogicCheckbox.Selected);
+            Assert.IsTrue(new MainPage.SupportBlock(SessionManager.getDriver()).HiddenLogicCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -129,7 +131,7 @@ namespace QuestTest
                 .ClickChaosCheckbox()
                 .ClickChaosCheckbox();
 
-            Assert.IsTrue(new MainPage.FilesBlock(SessionManager.getDriver()).HiddenChaosCheckbox.Selected);
+            Assert.IsTrue(new MainPage.FilesBlock(SessionManager.getDriver()).HiddenChaosCheckbox.Selected, $"{Message}");
         }
 
         [Test]
@@ -140,7 +142,7 @@ namespace QuestTest
                 .ClickBeautifulCheckbox()
                 .ClickBeautifulCheckbox();
 
-            Assert.IsTrue(new MainPage.FilesBlock(SessionManager.getDriver()).HiddenBeautifulCheckbox.Selected);
+            Assert.IsTrue(new MainPage.FilesBlock(SessionManager.getDriver()).HiddenBeautifulCheckbox.Selected, $"{Message}");
         }
 
         [OneTimeTearDown]
